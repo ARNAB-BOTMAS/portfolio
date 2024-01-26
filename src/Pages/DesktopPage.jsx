@@ -28,6 +28,7 @@ import { BarLoader } from 'react-spinners';
 import { css } from '@emotion/react';
 import contact from '../animation/contact.json';
 import Lottie from 'lottie-react';
+import Swal from 'sweetalert2';
 
 const override = css`
   display:block;
@@ -234,25 +235,41 @@ const DesktopPage = () => {
 
         // Check if any of the required fields are empty
         if (!nameInput.value.trim()) {
-            alert("Please enter your name.");
+            Swal.fire({
+                icon: "error",
+                title: "Empty",
+                text: "Please enter your Name.",
+            });
             nameInput.style.border = '2px solid red';
             return;
         }
 
         if (!phoneInput.value.trim()) {
-            alert("Please enter your phone number.");
+            Swal.fire({
+                icon: "error",
+                title: "Empty",
+                text: "Please enter your Phone Number.",
+            });
             phoneInput.style.border = '2px solid red';
             return;
         }
 
         if (!emailInput.value.trim()) {
-            alert("Please enter your email.");
+            Swal.fire({
+                icon: "error",
+                title: "Empty",
+                text: "Please enter your Email.",
+            });
             emailInput.style.border = '2px solid red';
             return;
         }
 
         if (!messageInput.value.trim()) {
-            alert("Please enter your message.");
+            Swal.fire({
+                icon: "error",
+                title: "Empty",
+                text: "Please enter your Message.",
+            });
             messageInput.style.border = '2px solid red';
             return;
         }
@@ -267,12 +284,20 @@ const DesktopPage = () => {
             setLoading(true);
             emailjs.sendForm('service_1q1t0vl', 'template_4gbbx2g', form.current, '6U8ZoQMxHOIlO3RU8')
             .then((result) => {
-                alert("Thank you for contacting us! We appreciate your message and will get back to you as soon as possible.");
+                Swal.fire({
+                    icon: "success",
+                    title: "Thank you for contacting us!",
+                    text: "We appreciate your message and will get back to you as soon as possible.",
+                });
                 form.current.reset();
                 setLoading(false);
             });
         } catch (error) {
-            alert("We apologize for the inconvenience, but we are currently experiencing technical difficulties with our server. Please try again later or contact support for assistance.");
+            Swal.fire({
+                    icon: "warning",
+                    title: "We apologize for the inconvenience",
+                    text: "we are currently experiencing technical difficulties with our server. Please try again later or contact support for assistance.",
+                });
             setLoading(false);
         }
     };
