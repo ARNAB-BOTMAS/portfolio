@@ -16,45 +16,47 @@
     }
 }
 
-.phone {
-    @include phone {
-        display: block;
-        /* font-size: large; */
+.frame{
+    .phone {
+        @include phone {
+            display: block;
+            /* font-size: large; */
+        }
+    
+        @include tablet {
+            display: none;
+        }
+    
+        @include desktop {
+            display: none;
+        }
     }
-
-    @include tablet {
-        display: none;
+    
+    .tab {
+        @include phone {
+            display: none;
+        }
+    
+        @include tablet {
+            display: block;
+        }
+    
+        @include desktop {
+            display: none;
+        }
     }
-
-    @include desktop {
-        display: none;
-    }
-}
-
-.tab {
-    @include phone {
-        display: none;
-    }
-
-    @include tablet {
-        display: block;
-    }
-
-    @include desktop {
-        display: none;
-    }
-}
-
-.desktop {
-    @include phone {
-        display: none;
-    }
-
-    @include tablet {
-        display: none;
-    }
-
-    @include desktop {
-        display: block;
+    
+    .desktop {
+        @include phone {
+            display: none;
+        }
+    
+        @include tablet {
+            display: none;
+        }
+    
+        @include desktop {
+            display: block;
+        }
     }
 }
