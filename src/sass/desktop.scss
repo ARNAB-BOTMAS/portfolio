@@ -234,6 +234,19 @@
         background: #fff;
         position: relative;
         height: fit-content;
+        h1{
+            opacity: 0;
+            transform: translateY(-100px);
+            animation: fade-top-buttom linear forwards;
+            animation-timeline: view();
+            animation-range: 250px 500px;
+        }
+        @keyframes fade-top-buttom {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+          }
         .aboutme{
             padding: 10px 250px;
             height: fit-content;
@@ -278,10 +291,15 @@
                         }
                       }
                     .inneraboutmetext{
+                        opacity: 0;
+                        transform: translateX(100px);
                         display: flex;
                         flex-direction: column;
                         flex-wrap: wrap;
                         text-align: left;
+                        animation: fade-right linear forwards;
+                        animation-timeline: view();
+                        animation-range: 250px 500px;
                         gap: 10px;
                         .headeraboutmetext{
                             font-size: 2rem;
@@ -320,6 +338,12 @@
 
                         }
                     }
+                    @keyframes fade-right {
+                        to {
+                            opacity: 1;
+                            transform: translateX(0);
+                        }
+                      }
                 }
             }
         }
