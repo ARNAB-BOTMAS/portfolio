@@ -174,6 +174,8 @@ const TabPage = () => {
             window.open('https://github.com/ARNAB-BOTMAS/PhotoAlbum', '_blank');
         } else if(serchId === 7){
             window.open('https://github.com/ARNAB-BOTMAS/HospitalPrescriptionAppliction', '_blank');
+        } else if(serchId === 8){
+            window.open('https://github.com/ARNAB-BOTMAS/weather-app', '_blank');
         } else{
             window.open('https://github.com/ARNAB-BOTMAS', '_blank')
         }
@@ -193,6 +195,8 @@ const TabPage = () => {
             window.open('https://github.com/ARNAB-BOTMAS/PhotoAlbum/tree/main/app', '_blank');
         } else if(serchId === 7){
             window.open('https://github.com/ARNAB-BOTMAS/HospitalPrescriptionAppliction/tree/main/app/src/main/res', '_blank');
+        } else if(serchId === 8){
+            window.open('https://weather-app-9ow7.onrender.com/', '_blank');
         } else if(serchId === 0){
             window.open('https://github.com/ARNAB-BOTMAS?tab=repositories', '_blank');
         }  else{
@@ -567,6 +571,20 @@ const TabPage = () => {
                                     <div className="buttonContent">
                                         <button onClick={() => handleViewmore(7)}><i class="fa-solid fa-eye"></i> View Code</button>
                                         <button onClick={() => handleGithub(7)}><i class="fa-solid fa-code"></i> GitHub</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section className="projectcard">
+                            <div className='coverpage'>
+                                <div className="projecttext">
+                                    <span>Weather Application</span>
+                                </div>
+                                <div className="projectContent">
+                                    <p>Experience the ultimate weather companion: your go-to app for precise forecasts, personalized alerts, and insightful weather insights....</p>
+                                    <div className="buttonContent">
+                                        <button onClick={() => handleViewmore(8)}><i class="fa-solid fa-laptop-file"></i> Visit Site</button>
+                                        <button onClick={() => handleGithub(8)}><i class="fa-solid fa-eye"></i> View Code</button>
                                     </div>
                                 </div>
                             </div>

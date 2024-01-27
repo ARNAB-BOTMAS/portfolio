@@ -512,6 +512,12 @@
                     background-size: cover;
                     background-position: center;
                 }
+                .projectcard:nth-child(8){
+                    background: url(../Image//back-project/Weather.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                }
                 .projectcard:hover{
                     .coverpage{
                         position: absolute;
