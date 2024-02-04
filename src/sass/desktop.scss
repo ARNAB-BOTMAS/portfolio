@@ -509,6 +509,12 @@
                     background-size: cover;
                     background-position: center;
                 }
+                .projectcard:nth-child(9){
+                    background: url(../Image//back-project/shopApp.jpg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: center;
+                }
                 .projectcard:hover{
                     .coverpage{
                         position: absolute;

@@ -176,6 +176,8 @@ const TabPage = () => {
             window.open('https://github.com/ARNAB-BOTMAS/HospitalPrescriptionAppliction', '_blank');
         } else if(serchId === 8){
             window.open('https://github.com/ARNAB-BOTMAS/weather-app', '_blank');
+        } else if(serchId === 9){
+            window.open('https://github.com/ARNAB-BOTMAS/shop-bill-system', '_blank');
         } else{
             window.open('https://github.com/ARNAB-BOTMAS', '_blank')
         }
@@ -197,9 +199,11 @@ const TabPage = () => {
             window.open('https://github.com/ARNAB-BOTMAS/HospitalPrescriptionAppliction/tree/main/app/src/main/res', '_blank');
         } else if(serchId === 8){
             window.open('https://weather-app-9ow7.onrender.com/', '_blank');
+        } else if(serchId === 9){
+            window.open('https://main--delicate-pegasus-26b2a2.netlify.app/', '_blank');
         } else if(serchId === 0){
             window.open('https://github.com/ARNAB-BOTMAS?tab=repositories', '_blank');
-        }  else{
+        } else{
             window.open('https://github.com/ARNAB-BOTMAS', '_blank')
         }
       }
@@ -585,6 +589,20 @@ const TabPage = () => {
                                     <div className="buttonContent">
                                         <button onClick={() => handleViewmore(8)}><i class="fa-solid fa-laptop-file"></i> Visit Site</button>
                                         <button onClick={() => handleGithub(8)}><i class="fa-solid fa-eye"></i> View Code</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section className="projectcard">
+                            <div className='coverpage'>
+                                <div className="projecttext">
+                                    <span>Shop Bill System</span>
+                                </div>
+                                <div className="projectContent">
+                                    <p>A Shop Bill System is a software application designed to streamline the process of generating bills and managing transactions within a retail or shop environment.</p>
+                                    <div className="buttonContent">
+                                        <button onClick={() => handleViewmore(9)}><i class="fa-solid fa-laptop-file"></i> Visit Site</button>
+                                        <button onClick={() => handleGithub(9)}><i class="fa-solid fa-eye"></i> View Code</button>
                                     </div>
                                 </div>
                             </div>
