@@ -200,7 +200,7 @@ const PhonePage = () => {
         } else if(serchId === 8){
             window.open('https://weather-app-9ow7.onrender.com/', '_blank');
         } else if(serchId === 9){
-            window.open('https://main--delicate-pegasus-26b2a2.netlify.app/', '_blank');
+            window.open('https://shop-bill-system.onrender.com/', '_blank');
         } else if(serchId === 0){
             window.open('https://github.com/ARNAB-BOTMAS?tab=repositories', '_blank');
         } else{
