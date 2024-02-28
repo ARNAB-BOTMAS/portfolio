@@ -212,7 +212,7 @@ const DesktopPage = () => {
         }  else if(serchId === 2){
             window.open('https://arnab-mondal-portfolio.onrender.com/', '_blank');
         } else if(serchId === 3){
-            window.open('https://amas-chat-app.netlify.app/', '_blank');
+            window.open('https://chatreactjs.onrender.com/', '_blank');
         } else if(serchId === 4){
             window.open('https://github.com/ARNAB-BOTMAS/AddTime/tree/main/app', '_blank');
         } else if(serchId === 5){
