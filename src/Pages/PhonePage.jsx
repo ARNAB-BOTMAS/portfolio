@@ -46,6 +46,47 @@ const PhonePage = () => {
     const [isEducationSection, setIsEducationSection] = useState(false);
     const [isContactSection, setIsContactSection] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [classNames, setClassNames] = useState(false);
+    const [startDate] = useState('2024-06-13');
+    const [experiencePoint, setExperience] = useState('');
+
+    const calculateExperience = (startDate) => {
+        const start = new Date(startDate);
+        const now = new Date();
+        let years = now.getFullYear() - start.getFullYear();
+        let months = now.getMonth() - start.getMonth();
+        let days = now.getDate() - start.getDate();
+
+        if (days < 0) {
+            months -= 1;
+            days += new Date(now.getFullYear(), now.getMonth(), 0).getDate(); // Get days in the previous month
+        }
+
+        if (months < 0) {
+            years -= 1;
+            months += 12;
+        }
+
+        if (years === 0) {
+            return `${months} months`;
+        }
+    
+        return `${years} years, ${months} months`;
+    };
+
+    useEffect(() => {
+        const experience = calculateExperience(startDate);
+        setExperience(experience);
+    }, [startDate]);
+
+    const changeExEn = () => {
+        setClassNames(true);
+    }
+
+    const changeExLe = () => {
+        setClassNames(false);
+    }
+
 
     const handleHamburgerClick = () => {
         setIsActive(!isActive);
@@ -476,6 +517,27 @@ const PhonePage = () => {
                             </div>
                         </section>
                     </div>
+                </div>
+                <div className='experience' id='experience'>
+                    <h1><i class="fa-solid fa-briefcase"></i> Experience</h1>
+                    <div className="comImage">
+                        <div className="imageLogo" onMouseEnter={changeExEn} onMouseLeave={changeExLe}>
+                            <div className={classNames ? 'imageContent' : 'imageContentNone'}>
+                                {/* <h1></h1> */}
+                                <div className="innerExContent">
+                                    <p>
+                                        <h2><i class="fa-brands fa-square-web-awesome-stroke"></i> TCS Indore Campus</h2>
+                                        <small><b>Tata Consultancy Services</b></small>
+                                        <h3>Graduate Trainee</h3>
+                                        <small><b>Jun 2024 to Present</b></small>
+                                    </p>
+                                    <p>Experience: {experiencePoint}</p>
+                                </div>
+                                <h1><i class="fa-solid fa-certificate fa-beat-fade"></i></h1>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div className="project" id="projectphone">
                     <h1><i class="fa-solid fa-laptop-code"></i> Project</h1>
