@@ -43,6 +43,7 @@ const DesktopPage = () => {
     const [isHome, setIsHome] = useState(false);
     const [isHomeSection, setIsHomeSection] = useState(true);
     const [isAboutSection, setIsAboutSection] = useState(false);
+    const [isExperiencetSection, setIsExperienceSection] = useState(false);
     const [isProjectSection, setIsProjectSection] = useState(false);
     const [isSkillSection, setIsSkillSection] = useState(false);
     const [isEducationSection, setIsEducationSection] = useState(false);
@@ -171,6 +172,7 @@ const DesktopPage = () => {
           setIsSkillSection(false);
           setIsEducationSection(false);
           setIsContactSection(false);
+          setIsExperienceSection(false);
         } else if (windowScroll >= 200 && windowScroll < 1000) {
           setIsHomeSection(false);
           setIsAboutSection(true);
@@ -178,10 +180,12 @@ const DesktopPage = () => {
           setIsSkillSection(false);
           setIsEducationSection(false);
           setIsContactSection(false);
+          setIsExperienceSection(false);
         } else if (windowScroll >=1000 && windowScroll < 1800){
             setIsHomeSection(false);
             setIsAboutSection(false);
             setIsSkillSection(true);
+            setIsExperienceSection(false);
             setIsProjectSection(false);
             setIsEducationSection(false);
             setIsContactSection(false);
@@ -189,20 +193,31 @@ const DesktopPage = () => {
             setIsHomeSection(false);
             setIsAboutSection(false);
             setIsSkillSection(false);
+            setIsExperienceSection(false);
             setIsProjectSection(false);
             setIsEducationSection(true);
             setIsContactSection(false);
-        } else if (windowScroll >=2500 && windowScroll < 3500){
+        } else if (windowScroll >=2500 && windowScroll < 2800){
             setIsHomeSection(false);
             setIsAboutSection(false);
             setIsSkillSection(false);
-            setIsProjectSection(true);
+            setIsExperienceSection(true);
+            setIsProjectSection(false);
             setIsEducationSection(false);
             setIsContactSection(false);
+        } else if (windowScroll >=2800 && windowScroll < 3500){
+            setIsHomeSection(false);
+            setIsAboutSection(false);
+            setIsSkillSection(false);
+            setIsExperienceSection(false);
+            setIsEducationSection(false);
+            setIsContactSection(false);
+            setIsProjectSection(true);
         } else {
             setIsHomeSection(false);
             setIsAboutSection(false);
             setIsSkillSection(false);
+            setIsExperienceSection(false);
             setIsProjectSection(false);
             setIsEducationSection(false);
             setIsContactSection(true);
@@ -377,6 +392,7 @@ const DesktopPage = () => {
                     <li className={`${isAboutSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('aboutme')}>About Me</li>
                     <li className={`${isSkillSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('skill')}>Skills</li>
                     <li className={`${isEducationSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('education')}>Education</li>
+                    <li className={`${isExperiencetSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('experience')}>Experience</li>
                     <li className={`${isProjectSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('project')}>Project</li>
                     <li className={`${isContactSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('contact')}>Contact</li>
                 </div>
@@ -711,6 +727,7 @@ const DesktopPage = () => {
                             <li onClick={() => scrollToSection('skill')}><i class="fa-solid fa-up-right-from-square"></i> Skills</li>
                             <li onClick={() => scrollToSection('aboutme')}><i class="fa-solid fa-up-right-from-square"></i> About Me</li>
                             <li onClick={() => scrollToSection('education')}><i class="fa-solid fa-up-right-from-square"></i> Education</li>
+                            <li onClick={() => scrollToSection('experience')}><i class="fa-solid fa-up-right-from-square"></i> Experience</li>
                             <li onClick={() => scrollToSection('project')}><i class="fa-solid fa-up-right-from-square"></i> Project</li>
                             <li onClick={() => scrollToSection('contact')}><i class="fa-solid fa-up-right-from-square"></i> Contact</li>
                     </div>

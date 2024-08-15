@@ -41,6 +41,7 @@ const TabPage = () => {
     const [isHome, setIsHome] = useState(false);
     const [isHomeSection, setIsHomeSection] = useState(true);
     const [isAboutSection, setIsAboutSection] = useState(false);
+    const [isExperiencetSection, setIsExperienceSection] = useState(false);
     const [isProjectSection, setIsProjectSection] = useState(false);
     const [isSkillSection, setIsSkillSection] = useState(false);
     const [isEducationSection, setIsEducationSection] = useState(false);
@@ -137,44 +138,58 @@ const TabPage = () => {
           document.body.scrollTop || document.documentElement.scrollTop;
     
         if (windowScroll >= 0 && windowScroll < 200) {
-          setIsHomeSection(true);
-          setIsAboutSection(false);
-          setIsProjectSection(false);
-          setIsSkillSection(false);
-          setIsEducationSection(false);
-          setIsContactSection(false);
-        } else if (windowScroll >= 200 && windowScroll < 1200) {
-          setIsHomeSection(false);
-          setIsAboutSection(true);
-          setIsProjectSection(false);
-          setIsSkillSection(false);
-          setIsEducationSection(false);
-          setIsContactSection(false);
-        } else if (windowScroll >=1200 && windowScroll < 2600){
+            setIsHomeSection(true);
+            setIsAboutSection(false);
+            setIsProjectSection(false);
+            setIsSkillSection(false);
+            setIsEducationSection(false);
+            setIsContactSection(false);
+            setIsExperienceSection(false);
+        } else if (windowScroll >= 200 && windowScroll < 2000) {
+            setIsHomeSection(false);
+            setIsAboutSection(true);
+            setIsProjectSection(false);
+            setIsSkillSection(false);
+            setIsEducationSection(false);
+            setIsContactSection(false);
+            setIsExperienceSection(false);
+        } else if (windowScroll >=2000 && windowScroll < 3000){
             setIsHomeSection(false);
             setIsAboutSection(false);
             setIsSkillSection(true);
+            setIsExperienceSection(false);
             setIsProjectSection(false);
             setIsEducationSection(false);
             setIsContactSection(false);
-        } else if (windowScroll >=2600 && windowScroll < 4200){
+        } else if (windowScroll >=3000 && windowScroll < 5000){
             setIsHomeSection(false);
             setIsAboutSection(false);
             setIsSkillSection(false);
+            setIsExperienceSection(false);
             setIsProjectSection(false);
             setIsEducationSection(true);
             setIsContactSection(false);
-        } else if (windowScroll >=4200 && windowScroll < 5000){
+        } else if (windowScroll >=5000 && windowScroll < 5500){
             setIsHomeSection(false);
             setIsAboutSection(false);
             setIsSkillSection(false);
-            setIsProjectSection(true);
+            setIsExperienceSection(true);
+            setIsProjectSection(false);
             setIsEducationSection(false);
             setIsContactSection(false);
+        } else if (windowScroll >=5500 && windowScroll < 6000){
+            setIsHomeSection(false);
+            setIsAboutSection(false);
+            setIsSkillSection(false);
+            setIsExperienceSection(false);
+            setIsEducationSection(false);
+            setIsContactSection(false);
+            setIsProjectSection(true);
         } else {
             setIsHomeSection(false);
             setIsAboutSection(false);
             setIsSkillSection(false);
+            setIsExperienceSection(false);
             setIsProjectSection(false);
             setIsEducationSection(false);
             setIsContactSection(true);
@@ -381,6 +396,7 @@ const TabPage = () => {
                     <li className={`${isAboutSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('aboutmetab')}>About Me</li>
                     <li className={`${isSkillSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('skilltab')}>Skills</li>
                     <li className={`${isEducationSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('educationtab')}>Education</li>
+                    <li className={`${isExperiencetSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('experiencetab')}>Experience</li>
                     <li className={`${isProjectSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('projecttab')}>Project</li>
                     <li className={`${isContactSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('contacttab')}>Contact</li>
                 </div>
@@ -519,7 +535,7 @@ const TabPage = () => {
                         </section>
                     </div>
                 </div>
-                <div className='experience' id='experience'>
+                <div className='experience' id='experiencetab'>
                     <h1><i class="fa-solid fa-briefcase"></i> Experience</h1>
                     <div className="comImage">
                         <div className="imageLogo" onMouseEnter={changeExEn} onMouseLeave={changeExLe}>
@@ -707,12 +723,13 @@ const TabPage = () => {
                     </div>
                     <div className="portfolio">
                         <h2>Quick Links</h2>
-                            <li onClick={() => scrollToSectionButton('homephone')}><i class="fa-solid fa-up-right-from-square"></i> Home</li>
-                            <li onClick={() => scrollToSectionButton('skillphone')}><i class="fa-solid fa-up-right-from-square"></i> Skills</li>
-                            <li onClick={() => scrollToSectionButton('aboutmephone')}><i class="fa-solid fa-up-right-from-square"></i> About Me</li>
-                            <li onClick={() => scrollToSectionButton('educationphone')}><i class="fa-solid fa-up-right-from-square"></i> Education</li>
-                            <li onClick={() => scrollToSectionButton('projectphone')}><i class="fa-solid fa-up-right-from-square"></i> Project</li>
-                            <li onClick={() => scrollToSectionButton('contactphone')}><i class="fa-solid fa-up-right-from-square"></i> Contact</li>
+                            <li onClick={() => scrollToSectionButton('hometab')}><i class="fa-solid fa-up-right-from-square"></i> Home</li>
+                            <li onClick={() => scrollToSectionButton('skilltab')}><i class="fa-solid fa-up-right-from-square"></i> Skills</li>
+                            <li onClick={() => scrollToSectionButton('aboutmetab')}><i class="fa-solid fa-up-right-from-square"></i> About Me</li>
+                            <li onClick={() => scrollToSectionButton('educationtab')}><i class="fa-solid fa-up-right-from-square"></i> Education</li>
+                            <li onClick={() => scrollToSectionButton('experiencetab')}><i class="fa-solid fa-up-right-from-square"></i> Experience</li>
+                            <li onClick={() => scrollToSectionButton('projecttab')}><i class="fa-solid fa-up-right-from-square"></i> Project</li>
+                            <li onClick={() => scrollToSectionButton('contacttab')}><i class="fa-solid fa-up-right-from-square"></i> Contact</li>
                     </div>
                     <div className="portfolio">
                         <h2>Contact Info</h2>

@@ -41,6 +41,7 @@ const PhonePage = () => {
     const [isHome, setIsHome] = useState(false);
     const [isHomeSection, setIsHomeSection] = useState(true);
     const [isAboutSection, setIsAboutSection] = useState(false);
+    const [isExperiencetSection, setIsExperienceSection] = useState(false);
     const [isProjectSection, setIsProjectSection] = useState(false);
     const [isSkillSection, setIsSkillSection] = useState(false);
     const [isEducationSection, setIsEducationSection] = useState(false);
@@ -137,23 +138,26 @@ const PhonePage = () => {
           document.body.scrollTop || document.documentElement.scrollTop;
     
         if (windowScroll >= 0 && windowScroll < 200) {
-          setIsHomeSection(true);
-          setIsAboutSection(false);
-          setIsProjectSection(false);
-          setIsSkillSection(false);
-          setIsEducationSection(false);
-          setIsContactSection(false);
+            setIsHomeSection(true);
+            setIsAboutSection(false);
+            setIsProjectSection(false);
+            setIsSkillSection(false);
+            setIsEducationSection(false);
+            setIsContactSection(false);
+            setIsExperienceSection(false);
         } else if (windowScroll >= 200 && windowScroll < 1200) {
-          setIsHomeSection(false);
-          setIsAboutSection(true);
-          setIsProjectSection(false);
-          setIsSkillSection(false);
-          setIsEducationSection(false);
-          setIsContactSection(false);
+            setIsHomeSection(false);
+            setIsAboutSection(true);
+            setIsProjectSection(false);
+            setIsSkillSection(false);
+            setIsEducationSection(false);
+            setIsContactSection(false);
+            setIsExperienceSection(false);
         } else if (windowScroll >=1200 && windowScroll < 2600){
             setIsHomeSection(false);
             setIsAboutSection(false);
             setIsSkillSection(true);
+            setIsExperienceSection(false);
             setIsProjectSection(false);
             setIsEducationSection(false);
             setIsContactSection(false);
@@ -161,20 +165,31 @@ const PhonePage = () => {
             setIsHomeSection(false);
             setIsAboutSection(false);
             setIsSkillSection(false);
+            setIsExperienceSection(false);
             setIsProjectSection(false);
             setIsEducationSection(true);
             setIsContactSection(false);
-        } else if (windowScroll >=4200 && windowScroll < 6000){
+        } else if (windowScroll >=4200 && windowScroll < 5000){
             setIsHomeSection(false);
             setIsAboutSection(false);
             setIsSkillSection(false);
-            setIsProjectSection(true);
+            setIsExperienceSection(true);
+            setIsProjectSection(false);
             setIsEducationSection(false);
             setIsContactSection(false);
+        } else if (windowScroll >=5000 && windowScroll < 6000){
+            setIsHomeSection(false);
+            setIsAboutSection(false);
+            setIsSkillSection(false);
+            setIsExperienceSection(false);
+            setIsEducationSection(false);
+            setIsContactSection(false);
+            setIsProjectSection(true);
         } else {
             setIsHomeSection(false);
             setIsAboutSection(false);
             setIsSkillSection(false);
+            setIsExperienceSection(false);
             setIsProjectSection(false);
             setIsEducationSection(false);
             setIsContactSection(true);
@@ -380,6 +395,7 @@ const PhonePage = () => {
                     <li className={`${isAboutSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('aboutmephone')}>About Me</li>
                     <li className={`${isSkillSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('skillphone')}>Skills</li>
                     <li className={`${isEducationSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('educationphone')}>Education</li>
+                    <li className={`${isExperiencetSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('experiencephone')}>Experience</li>
                     <li className={`${isProjectSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('projectphone')}>Project</li>
                     <li className={`${isContactSection ? 'activeSection' : ''}`} onClick={() => scrollToSection('contactphone')}>Contact</li>
                 </div>
@@ -518,7 +534,7 @@ const PhonePage = () => {
                         </section>
                     </div>
                 </div>
-                <div className='experience' id='experience'>
+                <div className='experience' id='experiencephone'>
                     <h1><i class="fa-solid fa-briefcase"></i> Experience</h1>
                     <div className="comImage">
                         <div className="imageLogo" onMouseEnter={changeExEn} onMouseLeave={changeExLe}>
@@ -710,6 +726,7 @@ const PhonePage = () => {
                             <li onClick={() => scrollToSectionButton('skillphone')}><i class="fa-solid fa-up-right-from-square"></i> Skills</li>
                             <li onClick={() => scrollToSectionButton('aboutmephone')}><i class="fa-solid fa-up-right-from-square"></i> About Me</li>
                             <li onClick={() => scrollToSectionButton('educationphone')}><i class="fa-solid fa-up-right-from-square"></i> Education</li>
+                            <li onClick={() => scrollToSectionButton('experiencephone')}><i class="fa-solid fa-up-right-from-square"></i> Experience</li>
                             <li onClick={() => scrollToSectionButton('projectphone')}><i class="fa-solid fa-up-right-from-square"></i> Project</li>
                             <li onClick={() => scrollToSectionButton('contactphone')}><i class="fa-solid fa-up-right-from-square"></i> Contact</li>
                     </div>
