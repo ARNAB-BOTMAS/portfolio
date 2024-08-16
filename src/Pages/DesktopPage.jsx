@@ -367,17 +367,17 @@ const DesktopPage = () => {
     };
     const gotosocial = (socialId) =>{
         if(socialId === 'facebook'){
-            window.open('https://www.facebook.com/shagor.roy.370?mibextid=JRoKGi', '_blank');
+            window.open(process.env.REACT_APP_FACEBOOK_URL, '_blank');
         } else if(socialId === 'instagram'){
-            window.open('https://www.instagram.com/shagor.roy.370/', '_blank');
+            window.open(process.env.REACT_APP_INSTAGRAM_URL, '_blank');
         } else if(socialId === 'github'){
-            window.open('https://github.com/ARNAB-BOTMAS', '_blank');
+            window.open(process.env.REACT_APP_GITHUB_URL, '_blank');
         } else if(socialId === 'linkedin'){
-            window.open('https://www.linkedin.com/in/arnab-mondal-4409a5299/', '_blank');
+            window.open(process.env.REACT_APP_LINKEDIN_URL, '_blank');
         } else if(socialId === 'telegram'){
-            window.open('https://t.me/Arnabmon', '_blank');
+            window.open(process.env.REACT_APP_TELEGRAM_URL, '_blank');
         } else if(socialId === 'whatsapp'){
-            window.open('https://wa.me/919339421756','_blank')
+            window.open(process.env.REACT_APP_WHATSAPP_URL,'_blank')
         }
     }
     return (
