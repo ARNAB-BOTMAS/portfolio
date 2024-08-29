@@ -138,12 +138,21 @@
                     box-shadow: 0 0 15px #0000008d;
                     transition: all 0.3s;
                     cursor: pointer;
-                    i{transition: all 0.3s;}
+                    span{
+                        display: inline-flex;
+                        align-items: center;
+                        .rightIcon{
+                            margin: 0;
+                            padding: 0;
+                            font-size: 1.2rem;
+                            transition: all 0.3s;
+                        }
+                    }
                 }
 
                 button:hover {
                     transform: scale(1.15);
-                    span i {
+                    span .rightIcon {
                         padding: 0 5px;
                         transform: rotate(90deg);
                     }
@@ -154,42 +163,65 @@
                     // background: #fff;
                     span{
                         font-size: 1.8rem;
-                        background: #fff;
+                        background: transparent;
                         transition: all 0.3s;
                     }
                     span:hover{
                         transform: scale(1.15);
                     }
                     span:nth-child(1){
-                        background: #316FF6;
-                        -webkit-background-clip: text;
-                        color: transparent;
+                        overflow: hidden;
+                        border-radius: 50%;
+                        .facebook{
+                            color: #316FF6;
+                            background: #fff;
+                        }
                     }
                     span:nth-child(2){
-                        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-                        -webkit-background-clip: text;
-                        color: transparent;
-                        // font-size: 24px;
+                        .instagram{
+                            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+                            color: #fff;
+                            border-radius: 8px;
+                        }
                     }
                     span:nth-child(3){
-                        background: #181717;
-                        -webkit-background-clip: text;
-                        color: transparent;
+                        overflow: hidden;
+                        border-radius: 50%;
+                        .github{
+                            background: #fff;
+                            color: #181717;
+                        }
                     }
-                    span:nth-child(4){
-                        background: #0077b5;
-                        -webkit-background-clip: text;
-                        color: transparent;
+                    span:nth-child(4){                        
+                        .linkedin{
+                            background: #0077b5;
+                            color: #fff;
+                            padding: 2.5px;
+                            border-radius: 5px;
+                            font-size: 1.5rem;
+                        }
                     }
                     span:nth-child(5){
-                        background: #0088cc;
-                        -webkit-background-clip: text;
-                        color: transparent;
+                        overflow: hidden;
+                        
+                        .telegram{
+                            font-size: 1.3rem;
+                            background: #0088cc;
+                            color: #fff;
+                            border-radius: 50%;
+                            padding: 5px;
+
+                        }
                     }
                     span:nth-child(6){
-                        background: #25d366;
-                        -webkit-background-clip: text;
-                        color: transparent;
+                        .whatsapp{
+                            font-size: 1.3rem;
+                            background: #25d366;
+                            color: #fff;
+                            border-radius: 50%;
+                            padding: 5px;
+
+                        }
                     }
 
                 }
@@ -208,6 +240,10 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            h1{
+                display: inline-flex;
+                align-items: center;
+            }
             .inneraboutme{
                 display: flex;
                 justify-content: center;
@@ -249,6 +285,8 @@
                         }
                         .pointheaderaboutmetext{
                             font-size: 1rem;
+                            display: inline-flex;
+                            align-items: center;
                         }
                         button{
                             margin: 10px 0;
@@ -259,6 +297,9 @@
                             border: none;
                             border-radius: 5px;
                             transition: all 0.3s;
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
                             cursor: pointer;
                             i{
                                 transition: all 0.3s;
@@ -290,6 +331,10 @@
             padding-right: 250px;
             padding-top: 10px;
             padding-bottom: 20px;
+            h1{
+                display: inline-flex;
+                align-items: center;
+            }
             .innerskill{
                 display: flex;
                 flex-wrap: wrap;
@@ -328,6 +373,13 @@
             flex-direction: column;
             align-items: center;
             // background: #0077b5;
+            h1{
+                display: inline-flex;
+                align-items: center;
+                .cap{
+                    font-size: larger;
+                }
+            }
             .inneredu{
                 display: flex;
                 align-items: center;
@@ -381,6 +433,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            h1{
+                display: inline-flex;
+                align-items: center;
+            }
             .comImage{
                 .imageLogo{
                     width: 400px;
@@ -411,6 +467,7 @@
                         text-align: left;
                         p{
                             h2{
+                                
                                 margin-bottom: 0;
                             }
                             h3{
@@ -440,6 +497,10 @@
             // gap: 50px;
             // justify-content: center;
             height: fit-content;
+            h1{
+                display: inline-flex;
+                align-items: center;
+            }
             .viewmore{
                 margin-top: 50px;
                 background: none;
@@ -501,6 +562,10 @@
                                 justify-content: center;
                                 gap: 15px;
                                 button{
+                                    display: inline-flex;
+                                    align-items: center;
+                                    text-align: center;
+                                    justify-content: center;
                                     width: 140px;
                                     padding: 10px 0;
                                     color: #fff;
@@ -508,6 +573,10 @@
                                     border: none;
                                     border-radius: 5px;
                                     transition: all 0.3s;
+                                    .icons{
+                                        font-size: larger;
+                                    }
+
                                 }
                                 button:hover{
                                     color: #181717;
@@ -588,6 +657,12 @@
                     
                 }
             }
+            button{
+                display: inline-flex;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+            }
         }
         .contact{
             display: flex;
@@ -597,6 +672,10 @@
             justify-content: center;
             padding: 35px 50px;
             height: 80vh;
+            h1{
+                display: inline-flex;
+                align-items: center;
+            }
             .innercontact{
                 display: flex;
                 flex-wrap: wrap;
@@ -609,7 +688,7 @@
                         flex-direction: column;
                         flex-wrap: wrap;
                         justify-content: center;
-                        input{
+                        input {
                             padding: 15px 5px;
                             margin: 10px 0;
                             width: 25vw;
@@ -617,7 +696,23 @@
                             outline: none;
                             font-size: 1rem;
                             border-radius: 5px;
+                            
+                            &.name:focus {
+                                border: 2px solid green;
+                                outline: none;
+                            }
+
+                            &.userPhone:focus {
+                                border: 2px solid green;
+                                outline: none;
+                            }
+
+                            &.email:focus {
+                                border: 2px solid green;
+                                outline: none;
+                            }
                         }
+                        
                         textarea{
                             padding: 15px 5px;
                             margin: 10px 0;
@@ -627,6 +722,10 @@
                             outline: none;
                             font-size: 1rem;
                             border-radius: 5px;
+                            &.msg:focus {
+                                border: 2px solid green;
+                                outline: none;
+                            }
                         }
                         button{
                             padding: 15px;
@@ -684,6 +783,8 @@
             .portfolio:nth-child(2){
                 width: 20%;
                 li{
+                    display: inline-flex;
+                    align-items: center;
                     list-style: none;
                     user-select: none;
                     -webkit-user-drag: none;
@@ -697,6 +798,8 @@
             }
             .portfolio:nth-child(3){
                 span{
+                    display: inline-flex;
+                    align-items: center;
                     margin-right: 15px;
                     color: #FFBB5C;
                 }
@@ -709,20 +812,19 @@
                         align-items: center;
                         justify-content: center;
                         text-align: center;
-                        padding: 10px;
-                        width: 5px;
-                        height: 5px;
+                        padding: 5px;
+                        width: 15px;
+                        height: 15px;
                         border-radius: 50%;
                         object-fit: cover;
                         background: #fff;
                         color: #000;
                         border: 3px solid #000;
-                        font-size: 1rem;
+                        // font-size: 1rem;
                         cursor: pointer;
                         transition: all 0.3s ease-in-out;
                     }
                     div:hover{
-                        font-size: 1rem;
                         background: #000;
                         color: #fff;
                         // border: 3px solid #fff;

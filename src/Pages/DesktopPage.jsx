@@ -30,6 +30,9 @@ import { css } from '@emotion/react';
 import contact from '../animation/contact.json';
 import Lottie from 'lottie-react';
 import Swal from 'sweetalert2';
+import { FaArrowRight, FaBriefcase, FaBuilding, FaChevronDown, FaChevronRight, FaCode, FaCog, FaDownload, FaEnvelope, FaEnvelopeOpenText, FaEye, FaFacebook, FaGithub, FaGraduationCap, FaHeadset, FaHeart, FaInstagram, FaLaptopCode, FaLinkedinIn, FaPaperPlane, FaPhone, FaTelegramPlane, FaUser, FaWhatsapp } from 'react-icons/fa';
+import { FcApproval } from 'react-icons/fc';
+import { FaLaptopFile, FaLocationCrosshairs, FaLocationDot, FaUpRightFromSquare } from 'react-icons/fa6';
 
 const override = css`
   display:block;
@@ -406,14 +409,21 @@ const DesktopPage = () => {
                         <span className='innerHeaderFirst'>Hi there,</span>
                         <span className="innerHeaderSecond">I'm Arnab Mondal</span>
                         <span className="innerHeaderThrid">I'm into <span className='autoTyped innerinnerHeaderThrid'></span></span>
-                        <button onClick={() => scrollToSection('aboutme')}><span><i class="fa-solid fa-chevron-right"></i></span> About Me</button>
+                        <button onClick={() => scrollToSection('aboutme')}><span><FaChevronRight className='rightIcon' /> About Me</span></button>
                         <div className="profileLink">
-                            <span onClick={() => gotosocial('facebook')}><i class="fa-brands fa-facebook"></i></span>
+                            {/* <span onClick={() => gotosocial('facebook')}><i class="fa-brands fa-facebook"></i></span>
                             <span onClick={() => gotosocial('instagram')}><i class="fa-brands fa-square-instagram"></i></span>
                             <span onClick={() => gotosocial('github')}><i class="fa-brands fa-github"></i></span>
                             <span onClick={() => gotosocial('linkedin')}><i class="fa-brands fa-linkedin"></i></span>
                             <span onClick={() => gotosocial('telegram')}><i class="fa-brands fa-telegram"></i></span>
-                            <span onClick={() => gotosocial('whatsapp')}><i class="fa-brands fa-square-whatsapp"></i></span>
+                            <span onClick={() => gotosocial('whatsapp')}><i class="fa-brands fa-square-whatsapp"></i></span> */}
+
+                            <span onClick={() => gotosocial('facebook')}><FaFacebook className='icon facebook'/></span>
+                            <span onClick={() => gotosocial('instagram')}><FaInstagram className='icon instagram'/></span>
+                            <span onClick={() => gotosocial('github')}><FaGithub className='icon github' /></span>
+                            <span onClick={() => gotosocial('linkedin')}><FaLinkedinIn className='icon linkedin'/></span>
+                            <span onClick={() => gotosocial('telegram')}><FaTelegramPlane className='icon telegram'/></span>
+                            <span onClick={() => gotosocial('whatsapp')}><FaWhatsapp className='icon whatsapp'/></span>
                         </div>
                     </div>
                 </div>
@@ -421,7 +431,7 @@ const DesktopPage = () => {
             </header>
             <main>
                 <div className="aboutme" id='aboutme'>
-                    <h1><i class="fa-solid fa-user"></i> About Me</h1>
+                    <h1><FaUser />&nbsp;About Me</h1>
                     <div className="inneraboutme">
                         <div className="innerinneraboutme">
                             <img src={aboutme} alt="" />
@@ -431,15 +441,15 @@ const DesktopPage = () => {
                                 <span className='parheaderaboutmetext'>
                                     I am a highly motivated and detailoriented computer science student with a passion for programming and a focus on delivering high-quality results. Skilled in Ms Office, web development, and programming in JAVA, C, C++, Python, I enjoy tackling complex problems and developing innovative solutions. As a strong team player with excellent communication skills, I am always eager to collaborate with others to achieve common goals.
                                 </span>
-                                <span className='pointheaderaboutmetext'><i class="fa-solid fa-envelope"></i> <b>Email:</b> arnabmondal203@gmail.com.</span>
-                                <span className='pointheaderaboutmetext'><i class="fa-solid fa-location-crosshairs"></i> <b>Place:</b> Champahati, West Bengal - 743330, India.</span><br />
-                                <button onMouseEnter={handleEnter} onMouseLeave={handleLeave} onClick={download}><i class={`fa-solid fa-download ${isHover ? 'fa-bounce' : ''}`}></i> Resume</button>
+                                <span className='pointheaderaboutmetext'><FaEnvelope/>&nbsp;<b>Email:</b>&nbsp;arnabmondal203@gmail.com.</span>
+                                <span className='pointheaderaboutmetext'><FaLocationCrosshairs />&nbsp;<b>Place:</b>&nbsp;Champahati, West Bengal - 743330, India.</span><br />
+                                <button onMouseEnter={handleEnter} onMouseLeave={handleLeave} onClick={download}><FaDownload class={`icons ${isHover ? 'fa-bounce' : ''}`} />&nbsp;Resume</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="skill" id='skill'>
-                    <h1><i class="fa-solid fa-gear fa-spin"></i> Skills</h1>
+                    <h1><FaCog className='fa-spin'/>&nbsp;Skills</h1>
                     <div className="innerskill">
                         <section className="skillcart">
                             <img src={android} alt="" />
@@ -504,7 +514,7 @@ const DesktopPage = () => {
                     </div>
                 </div>
                 <div className="education" id='education'>
-                    <h1><i class="fa-solid fa-graduation-cap"></i> My Education</h1>
+                    <h1><FaGraduationCap className='cap' />&nbsp;My Education</h1>
                     <div className="inneredu">
                         <section className='schoolEduaction'>
                             <img src={sammi} alt="" />
@@ -533,28 +543,28 @@ const DesktopPage = () => {
                     </div>
                 </div>
                 <div className='experience' id='experience'>
-                    <h1><i class="fa-solid fa-briefcase"></i> Experience</h1>
+                    <h1><FaBriefcase />&nbsp;Experience</h1>
                     <div className="comImage">
                         <div className="imageLogo" onMouseEnter={changeExEn} onMouseLeave={changeExLe}>
                             <div className={classNames ? 'imageContent' : 'imageContentNone'}>
                                 {/* <h1></h1> */}
                                 <div className="innerExContent">
                                     <p>
-                                        <h2><i class="fa-brands fa-square-web-awesome-stroke"></i> TCS Indore Campus</h2>
+                                        <h2><FaBuilding />&nbsp;TCS Indore Campus</h2>
                                         <small><b>Tata Consultancy Services</b></small>
                                         <h3>Graduate Trainee</h3>
                                         <small><b>Jun 2024 to Present</b></small>
                                     </p>
                                     <p>Experience: {experiencePoint}</p>
                                 </div>
-                                <h1><i class="fa-solid fa-certificate fa-beat-fade"></i></h1>
+                                <h1><FcApproval className='fa-beat-fade'/></h1>
                             </div>
                         </div>
                     </div>
 
                 </div>
                 <div className="project" id="project">
-                    <h1><i class="fa-solid fa-laptop-code"></i> Project</h1>
+                    <h1><FaLaptopCode />&nbsp;Project</h1>
                     <div className="innerproject">
                         <section className="projectcard">
                             <div className='coverpage'>
@@ -564,8 +574,8 @@ const DesktopPage = () => {
                                 <div className="projectContent">
                                     <p>At Srishti AI, our mission is clear - to pioneer the next era of intelligent technologies. Our team of visionary engineers and data scientists are dedicated to pushing the boundaries of what's possible, creating advanced algorithms and solutions that propel us into the future.</p>
                                     <div className="buttonContent">
-                                        <button onClick={() => handleViewmore(1)}><i class="fa-solid fa-eye"></i> View Code</button>
-                                        <button onClick={() => handleGithub(1)}><i class="fa-solid fa-code"></i> GitHub</button>
+                                        <button onClick={() => handleViewmore(1)}><FaEye className='icons'/>&nbsp;View Code</button>
+                                        <button onClick={() => handleGithub(1)}><FaCode className='icons'/>&nbsp;GitHub</button>
                                     </div>
                                 </div>
                             </div>
@@ -578,8 +588,8 @@ const DesktopPage = () => {
                                 <div className="projectContent">
                                     <p>Welcome to the future of web development! At React JS, we're not just coding; we're crafting seamless, dynamic, and engaging online experiences.</p>
                                     <div className="buttonContent">
-                                        <button onClick={() => handleViewmore(2)}><i class="fa-solid fa-laptop-file"></i> Visit Site</button>
-                                        <button onClick={() => handleGithub(2)}><i class="fa-solid fa-eye"></i> View Code</button>
+                                        <button onClick={() => handleViewmore(2)}><FaLaptopFile className='icons'/>&nbsp;Visit Site</button>
+                                        <button onClick={() => handleGithub(2)}><FaEye className='icons'/>&nbsp;View Code</button>
                                     </div>
                                 </div>
                             </div>
@@ -592,8 +602,8 @@ const DesktopPage = () => {
                                 <div className="projectContent">
                                     <p>Embarking on the creation of a chat website using ReactJS represents a fantastic project, providing you with a valuable opportunity to elevate your web development skills. This endeavor not only allows you to delve into the intricacies of ReactJS but also empowers you to construct a practical and highly interactive application.</p>
                                     <div className="buttonContent">
-                                        <button onClick={() => handleViewmore(3)}><i class="fa-solid fa-laptop-file"></i> Visit Site</button>
-                                        <button onClick={() => handleGithub(3)}><i class="fa-solid fa-eye"></i> View Code</button>
+                                        <button onClick={() => handleViewmore(3)}><FaLaptopFile className='icons'/>&nbsp;Visit Site</button>
+                                        <button onClick={() => handleGithub(3)}><FaEye className='icons'/>&nbsp;View Code</button>
                                     </div>
                                 </div>
                             </div>
@@ -606,8 +616,8 @@ const DesktopPage = () => {
                                 <div className="projectContent">
                                     <p>This application is designed to facilitate the recording of entry and exit times. Its primary function is to allow users to conveniently input and track their entry and exit times, providing a streamlined and efficient way to monitor these crucial data points.</p>
                                     <div className="buttonContent">
-                                        <button onClick={() => handleViewmore(4)}><i class="fa-solid fa-eye"></i> View Code</button>
-                                        <button onClick={() => handleGithub(4)}><i class="fa-solid fa-code"></i> GitHub</button>
+                                        <button onClick={() => handleViewmore(4)}><FaEye className='icons'/>&nbsp;View Code</button>
+                                        <button onClick={() => handleGithub(4)}><FaCode className='icons'/>&nbsp;GitHub</button>
                                     </div>
                                 </div>
                             </div>
@@ -620,8 +630,8 @@ const DesktopPage = () => {
                                 <div className="projectContent">
                                     <p>This application is designed to facilitate the recording of entry and exit times. Its primary function is to allow users to conveniently input and track their entry and exit times, providing a streamlined and efficient way to monitor these crucial data points.</p>
                                     <div className="buttonContent">
-                                        <button onClick={() => handleViewmore(5)}><i class="fa-solid fa-eye"></i> View Code</button>
-                                        <button onClick={() => handleGithub(5)}><i class="fa-solid fa-code"></i> GitHub</button>
+                                        <button onClick={() => handleViewmore(5)}><FaEye className='icons'/>&nbsp;View Code</button>
+                                        <button onClick={() => handleGithub(5)}><FaCode className='icons'/>&nbsp;GitHub</button>
                                     </div>
                                 </div>
                             </div>
@@ -634,8 +644,8 @@ const DesktopPage = () => {
                                 <div className="projectContent">
                                     <p>Create a Photo Album application that allows users to upload photos along with timestamps. This application serves as a platform for users to seamlessly share and organize their photos while capturing the temporal context through timestamp integration.</p>
                                     <div className="buttonContent">
-                                        <button onClick={() => handleViewmore(6)}><i class="fa-solid fa-eye"></i> View Code</button>
-                                        <button onClick={() => handleGithub(6)}><i class="fa-solid fa-code"></i> GitHub</button>
+                                        <button onClick={() => handleViewmore(6)}><FaEye className='icons'/>&nbsp;View Code</button>
+                                        <button onClick={() => handleGithub(6)}><FaCode className='icons'/>&nbsp;GitHub</button>
                                     </div>
                                 </div>
                             </div>
@@ -648,8 +658,8 @@ const DesktopPage = () => {
                                 <div className="projectContent">
                                     <p>Create a Hospital Prescription application that allows users to Prescription along with timestamps. This application serves as a platform for users to seamlessly share and organize their Prescription while capturing the temporal context through timestamp integration.</p>
                                     <div className="buttonContent">
-                                        <button onClick={() => handleViewmore(7)}><i class="fa-solid fa-eye"></i> View Code</button>
-                                        <button onClick={() => handleGithub(7)}><i class="fa-solid fa-code"></i> GitHub</button>
+                                        <button onClick={() => handleViewmore(7)}><FaEye className='icons'/>&nbsp;View Code</button>
+                                        <button onClick={() => handleGithub(7)}><FaCode className='icons'/>&nbsp;GitHub</button>
                                     </div>
                                 </div>
                             </div>
@@ -662,8 +672,8 @@ const DesktopPage = () => {
                                 <div className="projectContent">
                                     <p>Experience the ultimate weather companion: your go-to app for precise forecasts, personalized alerts, and insightful weather insights. Stay ahead of the elements, rain or shine, with real-time updates at your fingertips. From daily planning to weekend adventures, trust our app to keep you informed and prepared for whatever nature brings your way.</p>
                                     <div className="buttonContent">
-                                        <button onClick={() => handleViewmore(8)}><i class="fa-solid fa-laptop-file"></i> Visit Site</button>
-                                        <button onClick={() => handleGithub(8)}><i class="fa-solid fa-eye"></i> View Code</button>
+                                        <button onClick={() => handleViewmore(8)}><FaLaptopFile className='icons' />&nbsp;Visit Site</button>
+                                        <button onClick={() => handleGithub(8)}><FaEye className='icons'/>&nbsp;View Code</button>
                                     </div>
                                 </div>
                             </div>
@@ -676,24 +686,24 @@ const DesktopPage = () => {
                                 <div className="projectContent">
                                     <p>A Shop Bill System is a software application designed to streamline the process of generating bills and managing transactions within a retail or shop environment.</p>
                                     <div className="buttonContent">
-                                        <button onClick={() => handleViewmore(9)}><i class="fa-solid fa-laptop-file"></i> Visit Site</button>
-                                        <button onClick={() => handleGithub(9)}><i class="fa-solid fa-eye"></i> View Code</button>
+                                        <button onClick={() => handleViewmore(9)}><FaLaptopFile className='icons' />&nbsp;Visit Site</button>
+                                        <button onClick={() => handleGithub(9)}><FaEye className='icons'/>&nbsp;View Code</button>
                                     </div>
                                 </div>
                             </div>
                         </section>
                     </div>
-                    <button className='viewmore' onClick={() => handleViewmore(0)}>View More <i class="fa-solid fa-arrow-right"></i></button>
+                    <button className='viewmore' onClick={() => handleViewmore(0)}>View More&nbsp;<FaArrowRight /></button>
                 </div>
                 <div className="contact" id='contact'>
-                    <h1><i class="fa-solid fa-headphones-simple"></i> Contact Me</h1>
+                    <h1><FaHeadset />&nbsp;Contact Me</h1>
                     <div className="innercontact">
                         <div className="formContent">
                             <form ref={form} onSubmit={sendEmail}>
-                                <input type='text' placeholder='Name' name='user_name' id='name'/>
-                                <input type='tel' placeholder='Phone' name='user_phone' id='phone'/>
-                                <input type='email' placeholder='Email' name='user_email' id='email'/>
-                                <textarea placeholder='Message' name='message' id='message'/>
+                                <input type='text' placeholder='Name' name='user_name' id='name' className='name'/>
+                                <input type='tel' placeholder='Phone' name='user_phone' id='phone' className='userPhone'/>
+                                <input type='email' placeholder='Email' name='user_email' id='email' className='email'/>
+                                <textarea placeholder='Message' name='message' id='message' className='msg'/>
                                 <button type='submit' className='desktop-send-btn' disabled={loading} style={{ position: 'relative' }}>
                                     {loading ? (
                                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', padding:'6px'}}>
@@ -701,7 +711,7 @@ const DesktopPage = () => {
                                         </div>
                                     ) : (
                                         <span>
-                                            <i className="fa-solid fa-paper-plane"></i> Send
+                                            <FaPaperPlane/> Send
                                         </span>
                                     )}
                                 </button>
@@ -723,35 +733,36 @@ const DesktopPage = () => {
                     </div>
                     <div className="portfolio">
                         <h2>Quick Links</h2>
-                            <li onClick={() => scrollToSection('home')}><i class="fa-solid fa-up-right-from-square"></i> Home</li>
-                            <li onClick={() => scrollToSection('skill')}><i class="fa-solid fa-up-right-from-square"></i> Skills</li>
-                            <li onClick={() => scrollToSection('aboutme')}><i class="fa-solid fa-up-right-from-square"></i> About Me</li>
-                            <li onClick={() => scrollToSection('education')}><i class="fa-solid fa-up-right-from-square"></i> Education</li>
-                            <li onClick={() => scrollToSection('experience')}><i class="fa-solid fa-up-right-from-square"></i> Experience</li>
-                            <li onClick={() => scrollToSection('project')}><i class="fa-solid fa-up-right-from-square"></i> Project</li>
-                            <li onClick={() => scrollToSection('contact')}><i class="fa-solid fa-up-right-from-square"></i> Contact</li>
+                            <li onClick={() => scrollToSection('home')}><FaUpRightFromSquare/>&nbsp;Home</li><br />
+                            <li onClick={() => scrollToSection('skill')}><FaUpRightFromSquare/>&nbsp;Skills</li><br />
+                            <li onClick={() => scrollToSection('aboutme')}><FaUpRightFromSquare/>&nbsp;About Me</li><br />
+                            <li onClick={() => scrollToSection('education')}><FaUpRightFromSquare/>&nbsp;Education</li><br />
+                            <li onClick={() => scrollToSection('experience')}><FaUpRightFromSquare/>&nbsp;Experience</li><br />
+                            <li onClick={() => scrollToSection('project')}><FaUpRightFromSquare/>&nbsp;Project</li><br />
+                            <li onClick={() => scrollToSection('contact')}><FaUpRightFromSquare/>&nbsp;Contact</li><br />
                     </div>
                     <div className="portfolio">
                         <h2>Contact Info</h2>
-                        <p><span><i class="fa-solid fa-phone"></i></span> +91 93394 21756</p>
-                        <p><span><i class="fa-solid fa-envelope-open-text"></i></span> arnabmondal203@gmail.com</p>
-                        <p><span><i class="fa-solid fa-location-dot"></i></span> Champahati, West Bengal - 743330, India</p>
+                        <p><span><FaPhone /></span>&nbsp;+91 93394 21756</p>
+                        <p><span><FaEnvelopeOpenText/></span>&nbsp;arnabmondal203@gmail.com</p>
+                        <p><span><FaLocationDot/></span>&nbsp;Champahati, West Bengal - 743330, India</p>
                         <div className="links">
-                            <div onClick={() => gotosocial('facebook')}><i class="fa-brands fa-facebook"></i></div>
-                            <div onClick={() => gotosocial('instagram')}><i class="fa-brands fa-instagram"></i></div>
-                            <div onClick={() => gotosocial('github')}><i class="fa-brands fa-github"></i></div>
-                            <div onClick={() => gotosocial('linkedin')}><i class="fa-brands fa-linkedin-in"></i></div>
-                            <div onClick={() => gotosocial('telegram')}><i class="fa-brands fa-telegram"></i></div>
-                            <div onClick={() => gotosocial('whatsapp')}><i class="fa-brands fa-whatsapp"></i></div>
+                            <div onClick={() => gotosocial('facebook')}><FaFacebook className='icons'/></div>
+                            <div onClick={() => gotosocial('instagram')}><FaInstagram className='icons'/></div>
+                            <div onClick={() => gotosocial('github')}><FaGithub className='icons'/></div>
+                            <div onClick={() => gotosocial('linkedin')}><FaLinkedinIn className='icons'/></div>
+                            <div onClick={() => gotosocial('telegram')}><FaTelegramPlane className='icons'/></div>
+                            <div onClick={() => gotosocial('whatsapp')}><FaWhatsapp className='icons'/></div>
                         </div>
                     </div>
                 </div>
                 <div className="bottomFooter">
-                    Designed With <span style={{color: 'red'}}><i class="fa-solid fa-heart fa-beat"></i></span> Arnab Mondal
+                    Designed With <span style={{color: 'red', display: 'inline-flex' }}><FaHeart className='fa-beat'/></span> Arnab Mondal
                 </div>
             </footer>
             <div className={`top ${isHome ? 'show' : ''}`} onClick={gotoTop}>
-                <i className="fa-solid fa-chevron-down"></i>
+                {/* <i className="fa-solid fa-chevron-down"></i> */}
+                <FaChevronDown />
             </div>
 
         </div>
