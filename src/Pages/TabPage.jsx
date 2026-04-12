@@ -19,6 +19,7 @@ import reactjs from '../Image/skills/ReactJS.png';
 import sammi from '../Image/education/Sammilani.jpg';
 import sita from '../Image/education/Sitakundu.jpg';
 import south from '../Image/education/SouthGariaJadunath.jpg';
+import sikkim from '../Image/education/SikkimManipalUniversity.jpg';
 import '../sass/tab.scss';
 import Typed from 'typed.js';
 import Documents from '../document/CV2.pdf';
@@ -512,9 +513,17 @@ const TabPage = () => {
                     <h1><i class="fa-solid fa-graduation-cap"></i> My Education</h1>
                     <div className="inneredu">
                         <section className='schoolEduaction'>
+                            <img src={sikkim} alt="" />
+                            <div className="innerEduText">
+                                <span className="courseName">Master of Computer Applications (MCA)</span>
+                                <span className="instName">Sikkim Manipal University | SMU</span>
+                                <span className="compelteYear">2025-Present | Currently Appearing</span>
+                            </div>
+                        </section>
+                        <section className='schoolEduaction'>
                             <img src={sammi} alt="" />
                             <div className="innerEduText">
-                                <span className="courseName">Bachelor In Computer Science (Hons.)</span>
+                                <span className="courseName">Bachelor In Computer Science (B.Sc.)</span>
                                 <span className="instName">Sammilani Mahavidyalaya | CU</span>
                                 <span className="compelteYear">2020-2023 | Complete</span>
                             </div>
