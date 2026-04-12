@@ -286,80 +286,82 @@ const PhonePage = () => {
 
     const sendEmail = (e) => {
         e.preventDefault();
-
-        // Get the form fields
+    
         const nameInput = form.current.querySelector('#name');
         const phoneInput = form.current.querySelector('#phone');
         const emailInput = form.current.querySelector('#email');
         const messageInput = form.current.querySelector('#message');
-
-        // Check if any of the required fields are empty
+    
+        // Validation
         if (!nameInput.value.trim()) {
-            Swal.fire({
-                icon: "error",
-                title: "Empty",
-                text: "Please enter your Name.",
-            });
+            Swal.fire({ icon: "error", title: "Empty", text: "Please enter your Name." });
             nameInput.style.border = '2px solid red';
             return;
         }
-
+    
         if (!phoneInput.value.trim()) {
-            Swal.fire({
-                icon: "error",
-                title: "Empty",
-                text: "Please enter your Phone Number.",
-            });
+            Swal.fire({ icon: "error", title: "Empty", text: "Please enter your Phone Number." });
             phoneInput.style.border = '2px solid red';
             return;
         }
-
+    
         if (!emailInput.value.trim()) {
-            Swal.fire({
-                icon: "error",
-                title: "Empty",
-                text: "Please enter your Email.",
-            });
+            Swal.fire({ icon: "error", title: "Empty", text: "Please enter your Email." });
             emailInput.style.border = '2px solid red';
             return;
         }
-
+    
         if (!messageInput.value.trim()) {
-            Swal.fire({
-                icon: "error",
-                title: "Empty",
-                text: "Please enter your Message.",
-            });
+            Swal.fire({ icon: "error", title: "Empty", text: "Please enter your Message." });
             messageInput.style.border = '2px solid red';
             return;
         }
-
-        try {
-            // Reset borders
-            nameInput.style.border = '';
-            phoneInput.style.border = '';
-            emailInput.style.border = '';
-            messageInput.style.border = '';
-
-            setLoading(true);
-            emailjs.sendForm('service_1q1t0vl', 'template_4gbbx2g', form.current, '6U8ZoQMxHOIlO3RU8')
-            .then((result) => {
-                Swal.fire({
-                    icon: "success",
-                    title: "Thank you for contacting us!",
-                    text: "We appreciate your message and will get back to you as soon as possible.",
-                });
-                form.current.reset();
-                setLoading(false);
-            });
-        } catch (error) {
+    
+        // Reset borders
+        nameInput.style.border = '';
+        phoneInput.style.border = '';
+        emailInput.style.border = '';
+        messageInput.style.border = '';
+    
+        setLoading(true);
+    
+        // ✅ Proper chaining
+        emailjs.sendForm(
+            process.env.REACT_APP_EMAILJS_SERVICE_ID,
+            process.env.REACT_APP_EMAILJS_TEMPLATE_ID_ONE,
+            form.current,
+            process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        )
+        .then(() => {
+            // Send second email AFTER first succeeds
+            return emailjs.sendForm(
+                process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                process.env.REACT_APP_EMAILJS_TEMPLATE_ID_TWO,
+                form.current,
+                process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+            );
+        })
+        .then(() => {
             Swal.fire({
-                    icon: "warning",
-                    title: "We apologize for the inconvenience",
-                    text: "we are currently experiencing technical difficulties with our server. Please try again later or contact support for assistance.",
-                });
+                icon: "success",
+                title: "Thank you for contacting us!",
+                text: "We appreciate your message and will get back to you soon.",
+            });
+    
+            form.current.reset();
+        })
+        .catch((error) => {
+            console.error(error);
+    
+            Swal.fire({
+                icon: "warning",
+                title: "Something went wrong",
+                text: "We are experiencing technical issues. Please try again later.",
+            });
+        })
+        .finally(() => {
             setLoading(false);
-        }
+        });
     };
     const gotosocial = (socialId) =>{
         if(socialId === 'facebook'){
