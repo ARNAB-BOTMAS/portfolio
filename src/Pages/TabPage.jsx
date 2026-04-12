@@ -437,7 +437,7 @@ const TabPage = () => {
                                 <span className='parheaderaboutmetext'>
                                     I am a highly motivated and detailoriented computer science student with a passion for programming and a focus on delivering high-quality results. Skilled in Ms Office, web development, and programming in JAVA, C, C++, Python, I enjoy tackling complex problems and developing innovative solutions. As a strong team player with excellent communication skills, I am always eager to collaborate with others to achieve common goals.
                                 </span>
-                                <span className='pointheaderaboutmetext'><i class="fa-solid fa-envelope"></i> <b>Email:</b> arnabmondal203@gmail.com.</span>
+                                <span className='pointheaderaboutmetext'><i class="fa-solid fa-envelope"></i> <b>Email:</b> mail@arnabmondal.in.</span>
                                 <span className='pointheaderaboutmetext'><i class="fa-solid fa-location-crosshairs"></i> <b>Place:</b> Champahati, West Bengal - 743330, India.</span><br />
                                 <button onMouseEnter={handleEnter} onMouseLeave={handleLeave} onClick={download}><i class={`fa-solid fa-download ${isHover ? 'fa-bounce' : ''}`}></i> Resume</button>
                             </div>
@@ -745,7 +745,7 @@ const TabPage = () => {
                     <div className="portfolio">
                         <h2>Contact Info</h2>
                         <p><span><i class="fa-solid fa-phone"></i></span> +91 93394 21756</p>
-                        <p><span><i class="fa-solid fa-envelope-open-text"></i></span> arnabmondal203@gmail.com</p>
+                        <p><span><i class="fa-solid fa-envelope-open-text"></i></span> mail@arnabmondal.in</p>
                         <p><span><i class="fa-solid fa-location-dot"></i></span> Champahati, West Bengal - 743330, India</p>
                         <div className="links">
                             <div onClick={() => gotosocial('facebook')}><i class="fa-brands fa-facebook"></i></div>

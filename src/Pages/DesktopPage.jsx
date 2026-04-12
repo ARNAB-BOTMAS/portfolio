@@ -444,7 +444,7 @@ const DesktopPage = () => {
                                 <span className='parheaderaboutmetext'>
                                     I am a highly motivated and detailoriented computer science student with a passion for programming and a focus on delivering high-quality results. Skilled in Ms Office, web development, and programming in JAVA, C, C++, Python, I enjoy tackling complex problems and developing innovative solutions. As a strong team player with excellent communication skills, I am always eager to collaborate with others to achieve common goals.
                                 </span>
-                                <span className='pointheaderaboutmetext'><FaEnvelope/>&nbsp;<b>Email:</b>&nbsp;arnabmondal203@gmail.com.</span>
+                                <span className='pointheaderaboutmetext'><FaEnvelope/>&nbsp;<b>Email:</b>&nbsp;mail@arnabmondal.in.</span>
                                 <span className='pointheaderaboutmetext'><FaLocationCrosshairs />&nbsp;<b>Place:</b>&nbsp;Champahati, West Bengal - 743330, India.</span><br />
                                 <button onMouseEnter={handleEnter} onMouseLeave={handleLeave} onClick={download}><FaDownload class={`icons ${isHover ? 'fa-bounce' : ''}`} />&nbsp;Resume</button>
                             </div>
@@ -755,7 +755,7 @@ const DesktopPage = () => {
                     <div className="portfolio">
                         <h2>Contact Info</h2>
                         <p><span><FaPhone /></span>&nbsp;+91 93394 21756</p>
-                        <p><span><FaEnvelopeOpenText/></span>&nbsp;arnabmondal203@gmail.com</p>
+                        <p><span><FaEnvelopeOpenText/></span>&nbsp;mail@arnabmondal.in</p>
                         <p><span><FaLocationDot/></span>&nbsp;Champahati, West Bengal - 743330, India</p>
                         <div className="links">
                             <div onClick={() => gotosocial('facebook')}><FaFacebook className='icons'/></div>
