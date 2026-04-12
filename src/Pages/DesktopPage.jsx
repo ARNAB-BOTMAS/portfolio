@@ -349,7 +349,7 @@ const DesktopPage = () => {
             messageInput.style.border = '';
 
             setLoading(true);
-            emailjs.sendForm('service_1q1t0vl', 'template_4gbbx2g', form.current, '6U8ZoQMxHOIlO3RU8')
+            emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
             .then((result) => {
                 Swal.fire({
                     icon: "success",
