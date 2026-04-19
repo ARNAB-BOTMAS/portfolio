@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { createChat } from '@n8n/chat';
+import '@n8n/chat/style.css';
 import profile from '../Image/profile.jpg';
 import aboutme from '../Image/aboutme.png';
 import android from '../Image/skills/Android.png';
@@ -80,6 +82,18 @@ const TabPage = () => {
         const experience = calculateExperience(startDate);
         setExperience(experience);
     }, [startDate]);
+
+    useEffect(() => {
+        createChat({
+            webhookUrl: process.env.REACT_APP_CAHTBOT_CHAT_URL, // replace with your n8n webhook
+            mode: 'window', // or 'embedded'
+            showWelcomeScreen: true,
+            initialMessages: [
+                'Hi 👋',
+                'I am Srishti AI. How can I help you?'
+            ]
+        });
+    }, []);
 
     const changeExEn = () => {
         setClassNames(true);
