@@ -83,17 +83,17 @@ const TabPage = () => {
         setExperience(experience);
     }, [startDate]);
 
-    useEffect(() => {
-        createChat({
-            webhookUrl: process.env.REACT_APP_CAHTBOT_CHAT_URL, // replace with your n8n webhook
-            mode: 'window', // or 'embedded'
-            showWelcomeScreen: true,
-            initialMessages: [
-                'Hi 👋',
-                'I am Srishti AI. How can I help you?'
-            ]
-        });
-    }, []);
+    // useEffect(() => {
+    //     createChat({
+    //         webhookUrl: process.env.REACT_APP_CAHTBOT_CHAT_URL, // replace with your n8n webhook
+    //         mode: 'window', // or 'embedded'
+    //         showWelcomeScreen: true,
+    //         initialMessages: [
+    //             'Hi 👋',
+    //             'I am Srishti AI. How can I help you?'
+    //         ]
+    //     });
+    // }, []);
 
     const changeExEn = () => {
         setClassNames(true);
